@@ -1,15 +1,12 @@
 package com.practice;
 
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.springframework.context.annotation.Configuration;
 
-@Configuration
-@EnableAutoConfiguration
 public class DemoApplication {
 	public static void main(String[] args) {
-		AnnotationConfigApplicationContext context=new AnnotationConfigApplicationContext(College.class);
-		College college=context.getBean("collegeBean",College.class);
-		college.runMethod();
+		AnnotationConfigApplicationContext context=new AnnotationConfigApplicationContext(Config.class);
+		Employee emp=context.getBean("emp",Employee.class);
+		int s=emp.getsqure();
+		System.out.println("squre is "+s);
 	}
 }
